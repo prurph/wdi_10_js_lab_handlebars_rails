@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wdi10JsLabTemplates</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title>JS Templates Lab</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'http://s.c.lnkd.licdn.com/scds/concat/common/css?h=3bifs78lai5i0ndyj1ew7316e-9itxa6zyjvg22zg8x43bjie3o-2it1to3q1pt5evainys9ta07p-4uu2pkz5u0jch61r2nhpyyrn8-aze4ooami6s3kk293iv0zfky1-7poavrvxlvh0irzkbnoyoginp-4om4nn3a2z730xs82d78xj3be-dcnuupkxcjz3m1fya4z59aveq-ct4kfyj4tquup0bvqhttvymms-9zbbsrdszts09by60it4vuo3q-bjn9kbvacgrovgpk6in831zk8-8ti9u6z5f55pestwbmte40d9-49njgz26kcji7co2xhracnq0g-3pwwsn1udmwoy3iort8vfmygt-2d3dmhru4d3a2ekwmxrg5bwd3&amp;fc=2' %>
+  <%= stylesheet_link_tag 'http://s.c.lnkd.licdn.com/scds/concat/common/css?h=zdlj583lw7v34gee7foq71u6-dmr06xyte46us10wsdwy97vsu-723yr5y4vu26rvw25idq3m7dy-5xxmkfcm1ny97biv0pwj7ch69-bh4epi2lmzdt5u7j34vbgtyn&amp;fc=2' %>
+  <%= javascript_include_tag 'application' unless @disable_script %>
   <%= csrf_meta_tags %>
 </head>
 <body>

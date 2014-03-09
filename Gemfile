@@ -6,3 +6,6 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+
+gem 'handlebars_assets'
+gem 'js-routes'

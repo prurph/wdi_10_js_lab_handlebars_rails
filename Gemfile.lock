@@ -37,11 +37,19 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    handlebars_assets (0.15)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    js-routes (0.9.7)
+      railties (>= 3.2)
+      sprockets-rails
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -99,7 +107,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails
+  handlebars_assets
   jquery-rails
+  js-routes
   rails (= 4.0.3)
   sass-rails
   uglifier
