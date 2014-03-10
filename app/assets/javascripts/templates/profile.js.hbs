@@ -1,0 +1,166 @@
+<div class="wrapper">
+  <div id="main" class="profile grid-a">
+    <div id="content" class="resume hresume">
+      <div class="profile-header">
+        <div class="image" id="profile-picture">
+          <img src="{{pictureUrl}}" class="photo" width="100" height="100" alt="{{fullName}}">
+        </div><h1><span id="name" class="n fn"><span class="given-name">{{firstName}}</span> <span class="family-name">{{lastName}}</span></span></h1>
+        <p class="title">
+          {{headline}}
+        </p>
+        <dl id="headline" class="demographic-info adr">
+          <dt>
+            Location
+          </dt>
+          <dd class="locality">
+            {{location.name}}
+          </dd>
+          <dt>
+            Industry
+          </dt>
+          <dd class="industry">
+            {{industry}}
+          </dd>
+        </dl>
+        <h2 class="section-title">{{fullName}}'s Overview </h2>
+        <dl id="overview">
+          {{#each positions.values}}
+            {{#if isCurrent}}
+              <dt class="summary-current">
+                Current
+              </dt>
+              <dd class="summary-current">
+                <ul class="current">
+                  <li>
+                    {{title}}<span class="at"> at </span>{{company.name}}
+                  </li>
+                </ul>
+              </dd>
+            {{/if}}
+          {{/each}}
+            <dt class="summary-past">
+              Past
+            </dt>
+            <dd class="summary-past">
+              <ul class="past">
+                {{#each positions.values}}
+                  {{#unless positions.values.isCurrent}}
+                    <li>
+                      {{title}}<span class="at"> at </span>{{company.name}}
+                    </li>
+                  {{/unless}}
+                {{/each}}
+              </ul>
+            </dd>
+          <dt class="summary-education">
+            Education
+          </dt>
+          <dd class="summary-education">
+            <ul>
+              {{#each educations.values}}
+                <li>
+                  {{schoolName}}
+                </li>
+              {{/each}}
+            </ul>
+          </dd>
+          <dt>
+            Connections
+          </dt>
+          <dd class="overview-connections">
+            <p>
+              <strong>{{connections._total}}</strong>
+              connections
+            </p>
+          </dd>
+          <dt class="websites">
+            Websites
+          </dt>
+          <dd class="websites">
+            <ul>
+              {{#each memberUrlResources.values}}
+                <li>
+                  <a href="{{url}}" target="_blank">{{name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <div class="section" id="profile-summary">
+        <div class="header">
+          <h2>{{fullName}}'s Summary </h2>
+        </div>
+        <div class="content">
+          <p>
+            {{summary}}
+          </p>
+          <div id="profile-specialties">
+            <h3>Specialties</h3>
+            <p>
+              {{specialties}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="profile-skills">
+        <div class="header">
+          <h2>{{fullName}}'s Skills</h2>
+        </div>
+        <div class="content">
+          <ul class="skills competencies">
+            {{#each skills.values}}
+              <li class="competency skill">
+                <h3><a href="#">{{skill.name}}</a></h3>
+                {{#with proficiency}}
+                  <span class="proficiency">({{proficiency}}, {{years}} years experience)</span>
+                {{/with}}
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="section" id="profile-experience">
+        <div class="header">
+          <h2>{{fullName}}'s Experience</h2>
+        </div>
+        <div class="content vcalendar">
+          {{#each positions.values}}
+            {{#if isCurrent}}
+              <div class="position first experience vevent vcard current-position">
+            {{else}}
+              <div class="position experience vevent vcard past-position">
+            {{/if}}
+              <a class="include" href="#name"></a>
+              <div class="postitle">
+                <h3 class="position-title anet"><span class="title">{{title}}</span></h3>
+                <h4><strong><a class="company-profile-public" href="#"><span class="org summary">{{company.name}}</span></a></strong></h4>
+              </div>
+              <p class="orgstats organization-details">
+                {{company.type}}; {{company.industry}} Industry
+              </p>
+              <p class="period">
+                <abbr class="dtstart" title="2011-04-01">
+                  {{namedMonthWithYear startDate}}
+                </abbr>
+                &#8211;
+                {{#if isCurrent}}
+                  <abbr class="dtstamp" title="2011-04-01">
+                    Present
+                  </abbr>
+                {{else}}
+                  <abbr class="dtend" title="2011-04-01">
+                    {{namedMonthWithYear endDate}}
+                  </abbr>
+                {{/if}}
+              </p>
+              <p class="desc">
+                {{slashnToBr summary}}
+              </p>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
