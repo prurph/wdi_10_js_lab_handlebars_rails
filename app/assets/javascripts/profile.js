@@ -35,5 +35,8 @@ Handlebars.registerHelper('namedMonthWithYear', function(date) {
 });
 
 Handlebars.registerHelper('slashnToBr', function(summary) {
-  return new Handlebars.SafeString(summary.replace(/\n/g, "<br>"));
+  return new Handlebars.SafeString(
+    // escapeExpression first then replace to avoid shennanigans
+    Handlebars.Utils.escapeExpression(summary).replace(/\n/g, "<br>")
+  );
 });
